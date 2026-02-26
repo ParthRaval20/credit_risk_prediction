@@ -74,7 +74,7 @@ You can adjust this **threshold** in code to suit different business risk appeti
 ## 🔧 How to Run (GitHub Ready)
 
 1. **Clone the repository**
-   - `git clone <your-repo-url>`
+   - `git clone https://github.com/ParthRaval20/credit_risk_prediction`
    - `cd credit_risk_prediction`
 
 2. **Create and activate a virtual environment (recommended)**
