@@ -16,7 +16,7 @@ Predict whether a loan applicant is **low risk** (likely to repay) or **high ris
   - `amount`
   - `duration`
   - `savings`
-  - `employment`
+  - `employment_duration`
   - (and potentially other socio‑economic / financial indicators)
 
 ## ⚙️ Tech Stack
@@ -31,7 +31,7 @@ Predict whether a loan applicant is **low risk** (likely to repay) or **high ris
 2. Exploratory Data Analysis (EDA) on credit risk drivers.
 3. Feature engineering / selection as needed.
 4. Model training and evaluation inside the notebook.
-5. Export of the best model to `credit_risk_model.pkl`.
+5. Export of the best model to `model/credit_risk_model.pkl`.
 6. **Inference script** (`src/predict.py`) for CLI predictions using the saved model.
 
 > The detailed training steps live in `notebook/credit_risk_prediction.ipynb`, while `src/predict.py` focuses on **robust inference**.
@@ -63,11 +63,12 @@ You can adjust this **threshold** in code to suit different business risk appeti
 .
 ├── data
 │   └── credit_data.csv
+├── model
+│   └── credit_risk_model.pkl
 ├── notebook
 │   └── credit_risk_prediction.ipynb
 ├── src
 │   └── predict.py
-├── credit_risk_model.pkl        # (expected model artifact)
 └── README.md
 ```
 
@@ -89,8 +90,8 @@ You can adjust this **threshold** in code to suit different business risk appeti
 4. **Ensure required files exist**
    - `data/credit_data.csv` with:
      - Target column: `credit_risk`
-     - Feature columns at least: `age`, `amount`, `duration`, `savings`, `employment`
-   - `credit_risk_model.pkl` saved from your training notebook and compatible with `predict_proba`.
+     - Feature columns at least: `age`, `amount`, `duration`, `savings`, `employment_duration`
+   - `model/credit_risk_model.pkl` saved from your training notebook and compatible with `predict_proba`.
 
 5. **Run the prediction script**
    - `python -m src.predict`
@@ -116,7 +117,7 @@ If any critical error occurs (missing file, wrong column names, model issues), t
   ```
 
 - **Trained model artifact**:
-  - `credit_risk_model.pkl` (can be loaded into an API or batch scoring pipeline).
+  - `model/credit_risk_model.pkl` (can be loaded into an API or batch scoring pipeline).
 
 - **Notebook insights**:
   - `notebook/credit_risk_prediction.ipynb` for EDA, modeling experiments, and visualizations that can be shared with data science stakeholders.

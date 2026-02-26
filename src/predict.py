@@ -6,7 +6,7 @@ import joblib
 import pandas as pd
 
 
-MODEL_PATH = "credit_risk_model.pkl"
+MODEL_PATH = "model/credit_risk_model.pkl"
 DATA_PATH = "data/credit_data.csv"
 TARGET_COLUMN = "credit_risk"
 # Match actual column names in credit_data.csv
